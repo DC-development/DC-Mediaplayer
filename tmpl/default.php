@@ -47,14 +47,14 @@ defined('_JEXEC') or die; ?>
             <i class="icon-minus-2"></i>
         </button>
     </div>
-    <div class="disclaimer"><a href="http://www.dc-development.de" target="_blank">&copy; By DC-Development</div>
+    <div class="disclaimer"><a href="http://www.dc-development.de" target="_blank">&copy; By DC-Development</a></div>
 </div>
 <?php
 
 JHtml::_('jquery.framework');
 
 $document = JFactory::getDocument();
-$document->addStyleSheet("./modules/mod_dcmediaplayer/stylesheets/themes/".$params->get('theme', 'default'),'text/css',"screen");
+$document->addStyleSheet("./modules/mod_dcmediaplayer/stylesheets/themes/".$params->get('theme'),'text/css',"screen");
 $document->addScript("./modules/mod_dcmediaplayer/js/player.js");
 
 ?>
