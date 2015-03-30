@@ -6,6 +6,7 @@
     <description>
         A very simple MP3-Player module with some themes.
         Choose a color-theme and the folder to pull MP3's from.
+        Info: In this version you can only use one instance of the player per page.
     </description>
     <files>
         <filename>mod_dcmediaplayer.xml</filename>
