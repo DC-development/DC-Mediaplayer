@@ -103,10 +103,13 @@ jQuery( document ).ready(function($) {
         if(dcMediaPlayer.activeElement.prop){
             var currentTime = dcMediaPlayer.activeElement.prop("currentTime");
             var duration = dcMediaPlayer.activeElement.prop("duration");
-            $(".player-bar").css("width", currentTime/duration*100+"%");
-            $(".load-bar").css("width", dcMediaPlayer.activeElement.prop("buffered").end("buffered")/duration*100+"%");
+            var percentagePlayed = currentTime/duration*100;
+            var percentageBuffered = dcMediaPlayer.activeElement.prop("buffered").end("buffered")/duration*100
+            $(".player-bar").css("width", percentagePlayed+"%");
+            $(".load-bar").css("width", percentageBuffered+"%");
             //Skip to next track when current track reaches end
-            if( currentTime/duration*100 == 100){
+            if( percentagePlayed == 100){
+                dcMediaPlayer.activeElement.trigger('pause');
                 dcMediaPlayer.skip(1);
             }
         }
