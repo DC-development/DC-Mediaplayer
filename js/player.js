@@ -105,6 +105,10 @@ jQuery( document ).ready(function($) {
             var duration = dcMediaPlayer.activeElement.prop("duration");
             $(".player-bar").css("width", currentTime/duration*100+"%");
             $(".load-bar").css("width", dcMediaPlayer.activeElement.prop("buffered").end("buffered")/duration*100+"%");
+            //Skip to next track when current track reaches end
+            if( currentTime/duration*100 == 100){
+                dcMediaPlayer.skip(1);
+            }
         }
     }, 250);
     
