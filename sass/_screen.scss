@@ -1,0 +1,117 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+
+@import "sassybuttons";
+
+#dcMediaPlayer { 
+  font-family: arial;
+  font-size: 24px;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  margin: $player-margin;
+  padding: $player-padding;
+  width: auto;
+  overflow: hidden;
+  .controls {
+    padding-top: 4px;
+    overflow: hidden;
+    .player-search-bar {
+      background-color: $light-background-color;
+      display: block;
+      margin: 0.3vw 0 0.6vw 0;
+      .load-bar	{
+        background-color: $load-bar-color;
+        overflow: hidden;
+        min-width: 1.4em;
+      }
+      .player-bar {
+        overflow: visible;
+        height: 1vw;
+        background-color: $base-color;
+        border-right: 1px solid $background-color;
+        .player-head {
+          float: right;
+          display: block;
+          width: auto;
+          overflow: hidden;
+          background-color: $hover-color;
+          padding: 0 0.2em;
+          height: 1em;
+          color: $light-background-color;
+          margin-right: -1.4em;
+          display: none;
+        }
+      }
+    }
+    .player-control {
+      @include sassy-button("glass", 8px, 2vw, $base-color, $hover-color);
+    }
+    
+    #btnPause,
+    #btnPlay,
+    #btnNext,
+    #btnPrevious{
+      width: 33.33333%;
+      float: left;
+      &.hidden {
+        display: none;
+      } 
+    }
+    #btnVolumeUp,
+    #btnVolumeDown{
+      display: none;
+    }
+  }
+  
+  #trackListTitle {
+    font-size: 0.9em;
+    margin: 0.4em;
+    color: $light-background-color;
+    text-transform: capitalize;
+  }
+  
+  ul#trackList {
+    font-size: 0.6em;
+    display: block;
+    background: $light-background-color;
+    color: $base-color;
+    margin: 0;
+    //max-height: 150px;
+    //overflow-y: scroll;
+    li {
+      display: block;
+      padding: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-bottom: 1px solid $background-color;
+      cursor: pointer;
+      line-height: 1em;
+      text-transform: capitalize;
+      .audio {
+        display: block;
+        width:500px;
+        height: 40px;
+      }
+
+      &:hover,
+      &.active {
+        color: $light-background-color;
+        background-color: $hover-color;
+      };
+    }
+  }
+  .disclaimer {
+    float: right;
+    line-height: 0.4em;
+    padding: 0.35em 0.1em 0 0;
+    a {
+      font-size:0.42em;
+      color: $dim-font-color;
+    }
+  }
+}

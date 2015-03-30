@@ -1,0 +1,10 @@
+$border-color : lighten($base-color, 20%);
+$hover-color : darken($base-color, 3%);
+$background-color : darken($base-color, 8%);
+$load-bar-color : lighten($base-color, 15);
+$light-background-color : lighten($base-color, 65);
+$dim-font-color : lighten($base-color, 35);
+ 
+$player-margin: 4px auto;
+$player-padding: 4px;
+$player-max-width: 720px;

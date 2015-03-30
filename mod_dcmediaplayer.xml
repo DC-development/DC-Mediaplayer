@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>DC-MediaPlayer</name>
+    <author>Philipp Sengelmann</author>
+    <version>1.0.0</version>
+    <description>
+        A very simple MP3-Player module with some themes.
+        Choose a color-theme and the folder to pull MP3's from.
+    </description>
+    <files>
+        <filename>mod_dcmediaplayer.xml</filename>
+        <filename module="mod_dcmediaplayer">mod_dcmediaplayer.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>js/player.js</filename>
+
+        <filename>stylesheets/themes/theme-cool-grey.css</filename>
+        <filename>stylesheets/themes/theme-dark-slate.css</filename>
+        <filename>stylesheets/themes/theme-blood-red.css</filename>
+        <filename>stylesheets/themes/theme-crooners-red.css</filename>
+        <filename>stylesheets/themes/theme-light-red.css</filename>
+        <filename>stylesheets/themes/theme-dark-orange.css</filename>
+        <filename>stylesheets/themes/theme-cool-orange.css</filename>
+        <filename>stylesheets/themes/theme-menthol-blue.css</filename>
+        <filename>stylesheets/themes/theme-dark-blue.css</filename>
+        <filename>stylesheets/themes/theme-cool-blue.css</filename>
+        <filename>stylesheets/themes/theme-light-lime.css</filename>
+        <filename>stylesheets/themes/theme-dark-green.css</filename>
+        <filename>stylesheets/themes/theme-pasted-green.css</filename>
+        
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+               
+                <field
+                        name="title"
+                        type="input"
+                        default="DC-Mediaplayer"
+                        label="Player Title"
+                        description="Title shown on top of player (put a space in here to leave it blank)"></field>
+                <field
+                        name="folder"
+                        type="input"
+                        default="images/dc_mediaplayer"
+                        label="MP3 Folder"
+                        description="The folder to get your mp3's from"></field>
+                
+                <field
+                        name="theme"
+                        type="list"
+                        default="0"
+                        label="Theme"
+                        description="Choose a fancy color-theme"
+                        >
+                    <option value="theme-cool-grey.css">Cool Grey</option>
+                    <option value="theme-dark-slate.css">Dark Slate</option>
+                    
+                    <option value="theme-blood-red.css">Blood Red</option>
+                    <option value="theme-light-red.css">Light Red</option>
+                    <option value="theme-crooners-red.css">Crooners Red</option>
+                    <option value="theme-dark-orange.css">Dark Orange</option>
+                    <option value="theme-cool-orange.css">Cool Orange</option>
+        
+                    <option value="theme-menthol-blue.css">Menthol Blue</option>
+                    <option value="theme-dark-blue.css">Dark Blue</option>
+                    <option value="theme-cool-blue.css">Cool Blue</option>
+                    
+                    <option value="theme-light-lime.css">Light Lime</option>
+                    <option value="theme-dark-green.css">Dark Green</option>
+                    <option value="theme-pasted-green.css">Pasted Green</option>
+                    
+                </field>
+               
+               
+            </fieldset>
+        </fields>
+    </config>
+</extension>
