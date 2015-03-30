@@ -78,13 +78,14 @@ jQuery( document ).ready(function($) {
         $(this).addClass("hidden");
         $("#btnPlay").removeClass("hidden");
     });
- 
+    
+    //Volume buttons are  disabled by css at the moment
     $("#btnVolumeUp").click(function(e){
         e.preventDefault();
         if(dcMediaPlayer.volume<10)dcMediaPlayer.volume += 1;
         $(".tracklist-item").find('audio').prop('volume', dcMediaPlayer.volume/10);
     });
-
+    
     $("#btnVolumeDown").click(function(e){
         e.preventDefault();
         if(dcMediaPlayer.volume>0)dcMediaPlayer.volume -= 1;
