@@ -15,7 +15,6 @@
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>
         <filename>js/player.js</filename>
-
         <filename>stylesheets/themes/theme-cool-grey.css</filename>
         <filename>stylesheets/themes/theme-dark-slate.css</filename>
         <filename>stylesheets/themes/theme-blood-red.css</filename>
@@ -28,8 +27,7 @@
         <filename>stylesheets/themes/theme-cool-blue.css</filename>
         <filename>stylesheets/themes/theme-light-lime.css</filename>
         <filename>stylesheets/themes/theme-dark-green.css</filename>
-        <filename>stylesheets/themes/theme-pasted-green.css</filename>
-        
+        <filename>stylesheets/themes/theme-pasted-green.css</filename>       
     </files>
     <config>
         <fields name="params">
