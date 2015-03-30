@@ -40,14 +40,15 @@
                         type="input"
                         default="DC-Mediaplayer"
                         label="Player Title"
-                        description="Title shown on top of player (put a space in here to leave it blank)"></field>
+                        description="Title shown on top of player (put a space in here to leave it blank)">   
+                        </field>
                 <field
                         name="folder"
                         type="input"
                         default="images/dc_mediaplayer"
                         label="MP3 Folder"
-                        description="The folder to get your mp3's from"></field>
-                
+                        description="The folder to get your mp3's from">
+                        </field>
                 <field
                         name="theme"
                         type="list"
@@ -73,8 +74,6 @@
                     <option value="theme-pasted-green.css">Pasted Green</option>
                     
                 </field>
-               
-               
             </fieldset>
         </fields>
     </config>
