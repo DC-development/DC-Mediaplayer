@@ -6,6 +6,7 @@ jQuery( document ).ready(function($) {
         "activeElement": {},
         "currentTime": 0,
         "loading": false,
+        "volume" : 10,
         "playing": false,
         "entryCount": $(".tracklist-item").length-1,
         "activeElementId": function(){
@@ -52,9 +53,6 @@ jQuery( document ).ready(function($) {
         $("#btnPause").removeClass("hidden");
         $("#btnPlay").addClass("hidden");
     });
-    
-    var player = player || {}
-    player.volume = 10;
 
     $("#btnPlay").click(function(e){
         e.preventDefault();
@@ -80,19 +78,26 @@ jQuery( document ).ready(function($) {
         $(this).addClass("hidden");
         $("#btnPlay").removeClass("hidden");
     });
-
+ 
     $("#btnVolumeUp").click(function(e){
         e.preventDefault();
-        if(player.volume<10)player.volume += 1;
-        $(".tracklist-item").find('audio').prop('volume', player.volume/10);
+        if(dcMediaPlayer.volume<10)dcMediaPlayer.volume += 1;
+        $(".tracklist-item").find('audio').prop('volume', dcMediaPlayer.volume/10);
     });
 
     $("#btnVolumeDown").click(function(e){
         e.preventDefault();
-        if(player.volume>0)player.volume -= 1;
-        $(".tracklist-item").find('audio').prop('volume', player.volume/10);
+        if(dcMediaPlayer.volume>0)dcMediaPlayer.volume -= 1;
+        $(".tracklist-item").find('audio').prop('volume', dcMediaPlayer.volume/10);
     });
 
+    //Initialize the player
+    dcMediaPlayer.setTrack(0);
+    $("#btnPause").addClass("hidden");
+    $("#btnPlay").removeClass("hidden");
+    dcMediaPlayer.activeElement.trigger('pause');
+    
+    //Update the player time-bar
     window.setInterval(function(){
         if(dcMediaPlayer.activeElement.prop){
             var currentTime = dcMediaPlayer.activeElement.prop("currentTime");
@@ -101,7 +106,8 @@ jQuery( document ).ready(function($) {
             $(".load-bar").css("width", dcMediaPlayer.activeElement.prop("buffered").end("buffered")/duration*100+"%");
         }
     }, 250);
-
+    
+    //Pause all others on play-event and set back time to 0
     document.addEventListener('play', function(e){
         var audios = document.getElementsByTagName('audio');
         for(var i = 0, len = audios.length; i < len;i++){
@@ -111,11 +117,4 @@ jQuery( document ).ready(function($) {
             }
         }
     }, true);
-
-    dcMediaPlayer.setTrack(0);
-    $("#btnPause").addClass("hidden");
-    $("#btnPlay").removeClass("hidden");
-    dcMediaPlayer.activeElement.trigger('pause');
-    // dcMediaPlayer.init();
-
 });
