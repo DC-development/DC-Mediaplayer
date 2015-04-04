@@ -1,6 +1,19 @@
 <?php
-// No direct access
-defined('_JEXEC') or die; ?>
+/**
+ * DC-Mediaplayer Default Template
+ * 
+ * @package    DCDevelopment.Joomla3.Modules
+ * @subpackage Modules
+ * @license    GNU/GPL, see LICENSE.php
+ * @link       http://www.dc-development.de
+ * mod_dcmediaplayer is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ */
+
+?>
+
 <div id="dcMediaPlayer" class="default">
     <h2 id='trackListTitle'><?php echo $params->get('title', 'DC-Mediaplayer'); ?></h2>
 
