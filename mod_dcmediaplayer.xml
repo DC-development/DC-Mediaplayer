@@ -3,6 +3,7 @@
     <name>DC-MediaPlayer</name>
     <author>Philipp Sengelmann</author>
     <version>1.0.0</version>
+    <license>GNU/GPL</license>
     <description>
         A very simple MP3-Player module with some themes.
         Choose a color-theme and the folder to pull MP3's from.
