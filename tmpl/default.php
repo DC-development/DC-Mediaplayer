@@ -12,7 +12,7 @@
  * other free or open source software licenses.
  */
 
-?>
+defined('_JEXEC') or die; ?>
 
 <div id="dcMediaPlayer" class="default">
     <h2 id='trackListTitle'><?php echo $params->get('title', 'DC-Mediaplayer'); ?></h2>
