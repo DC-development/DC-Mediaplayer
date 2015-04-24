@@ -1,5 +1,6 @@
 require 'compass'
 require 'sassy-buttons'
+require 'font-awesome-sass-mixins'
 
 # Require any additional compass plugins here.
 

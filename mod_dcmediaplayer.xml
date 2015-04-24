@@ -10,6 +10,9 @@
         Info: In this version you can only use one instance of the player per page.
     </description>
     <files>
+        <folder>fonts</folder>
+        <folder>stylesheets</folder>
+      
         <filename>mod_dcmediaplayer.xml</filename>
         <filename module="mod_dcmediaplayer">mod_dcmediaplayer.php</filename>
         <filename>index.html</filename>

@@ -41,23 +41,23 @@ defined('_JEXEC') or die; ?>
             </div>
         </div>
         <button class="player-control" id="btnPrevious">
-            <i class="icon-backward"></i>
+            <i></i>
         </button>
         <button class="player-control hidden" id="btnPause">
-            <i class="icon-pause"></i>
+            <i></i>
         </button>
         <button class="player-control"  id="btnPlay">
-            <i class="icon-play"></i>
+            <i></i>
         </button>
         <button class="player-control" id="btnNext">
-            <i class="icon-forward"></i>
+            <i></i>
         </button>
         
         <button class="player-control" id="btnVolumeUp">
-            <i class="icon-plus-2"></i>
+            <i></i>
         </button>
         <button class="player-control" id="btnVolumeDown">
-            <i class="icon-minus-2"></i>
+            <i></i>
         </button>
     </div>
     <div class="disclaimer"><a href="http://www.dc-development.de" target="_blank">&copy; By DC-Development</a></div>
