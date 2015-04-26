@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jedupdate version="1">
+	<core_body>
+		test 
+	</core_body>
+	
+	<!-- valid links only or leave blank -->
+	<homepage_link>http://dcd-hamburg.de</homepage_link>
+	<download_link>https://github.com/DC-development/DC-Mediaplayer/archive/master.zip</download_link>
+	<demo_link>http://dcdev.demojoomla.com</demo_link>
+	<documentation_link>https://github.com/DC-development/DC-Mediaplayer/wiki</documentation_link>
+	<support_link>https://github.com/DC-development/DC-Mediaplayer/issues</support_link>
+	<license_link>https://github.com/DC-development/DC-Mediaplayer/blob/master/LICENSE.txt</license_link>
+	
+	<version>3.1</version>
+
+	<compatibility>
+		<version>30</version>
+	</compatibility>
+</jedupdate>
