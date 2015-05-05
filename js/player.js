@@ -8,6 +8,8 @@ jQuery( document ).ready(function($) {
         "loading": false,
         "volume" : 10,
         "playing": false,
+        "randomPlayback" : false,
+        "playedRandomly" : [],
         "entryCount": $(".tracklist-item").length-1,
         "activeElementId": function(){
             id = this.activeElement.attr("id").split('_')[1];
@@ -30,8 +32,13 @@ jQuery( document ).ready(function($) {
     dcMediaPlayer.skip = function(e) {
         var currentId = this.activeElementId();
         var listCount = this.entryCount;
-        var newId = currentId+e;
+        if(dcMediaPlayer.randomPlayback===true){
+            var newId = dcMediaPlayer.shuffle();
+        }else{
+            var newId = currentId+e;
+        }
         this.activeElement.trigger("pause");
+
         if(newId < 0){
             var newId = listCount;
             this.setTrack(newId);
@@ -43,7 +50,26 @@ jQuery( document ).ready(function($) {
             this.setTrack(newId);
         }
     }
- 
+    
+    dcMediaPlayer.shuffle = function() {
+        var trackCount = dcMediaPlayer.entryCount+1;
+        var newRandom = dcMediaPlayer.activeElementId();
+
+        if($.inArray(newRandom, dcMediaPlayer.playedRandomly)<0){
+            dcMediaPlayer.playedRandomly.push(newRandom);
+        }
+        while($.inArray(newRandom, dcMediaPlayer.playedRandomly)>-1){
+            var newRandom = Math.floor((Math.random() * trackCount));
+        }
+        if(dcMediaPlayer.playedRandomly.length<dcMediaPlayer.entryCount){
+            dcMediaPlayer.playedRandomly.push(newRandom); 
+        }else{
+            dcMediaPlayer.playedRandomly = [];
+        }
+        //console.log(dcMediaPlayer.playedRandomly);
+        return newRandom
+    }
+
     $(".tracklist-item").click(function(){
         $(".tracklist-item").removeClass("active");
         $(this).addClass("active");
@@ -110,7 +136,12 @@ jQuery( document ).ready(function($) {
             //Skip to next track when current track reaches end
             if( percentagePlayed == 100){
                 dcMediaPlayer.activeElement.trigger('pause');
-                dcMediaPlayer.skip(1);
+                if(dcMediaPlayer.randomPlayback===true) {
+                    var newRandom = dcMediaPlayer.shuffle();
+                    dcMediaPlayer.setTrack(newRandom);
+                }else{
+                    dcMediaPlayer.skip(1);
+                }  
             }
         }
     }, 250);
