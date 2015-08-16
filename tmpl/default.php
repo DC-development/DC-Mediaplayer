@@ -26,7 +26,7 @@ defined('_JEXEC') or die; ?>
             $title = str_replace(".mp3"," ",$title);
             
             echo "<li class='tracklist-item'>".$title."<audio id='track_".$key."'>".
-			"<source src='".$params->get('folder', 'images/dc-mediaplayer')."/".$value."' type='audio/mpeg'></source>".
+			"<source src='".JURI::base(true)."/".$params->get('folder', 'images/dc-mediaplayer')."/".$value."' type='audio/mpeg'></source>".
 			"</audio></li>";
         }
         ?>
